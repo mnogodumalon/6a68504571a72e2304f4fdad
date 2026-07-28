@@ -11,7 +11,11 @@
           "op": "create",
           "entity": "anmeldungen",
           "app_id": "6a68502e907aa30b71a8c551",
-          "fields": ["termin", "vorname", "nachname", "email", "telefon", "anmeldedatum", "anmeldequelle", "status_anmeldung"]
+          "fields": ["termin", "vorname", "nachname", "email", "telefon", "anmeldedatum"],
+          "preset_fields": {
+            "anmeldequelle": "online",
+            "status_anmeldung": "neu"
+          }
         }
       ]
     },
@@ -25,8 +29,8 @@
           "op": "list",
           "entity": "termine",
           "app_id": "6a68502d9f94f73b1d91afc0",
-          "scope": "status == 'geplant'",
-          "scope_description": "Zeigt nur geplante Termine für die öffentliche Buchungsseite"
+          "scope": "r.v_status == 'geplant' and r.v_datum_uhrzeit >= now()",
+          "scope_description": "Zeigt nur geplante, zukünftige Termine für die öffentliche Buchungsseite"
         }
       ]
     },
@@ -40,7 +44,7 @@
           "op": "list",
           "entity": "kurse",
           "app_id": "6a685028fbdec1017e116825",
-          "scope": "aktiv == true",
+          "scope": "r.v_aktiv == True",
           "scope_description": "Zeigt nur aktive Kurse für die öffentliche Kursübersicht"
         }
       ]

@@ -189,8 +189,6 @@ export default function YogaAnmeldungPage() {
         vorname: vorname.trim(),
         nachname: nachname.trim(),
         anmeldedatum,
-        anmeldequelle: 'online',
-        status_anmeldung: 'neu',
       };
       if (email.trim()) fields.email = email.trim();
       if (telefon.trim()) fields.telefon = telefon.trim();
