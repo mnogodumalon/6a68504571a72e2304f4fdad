@@ -15,6 +15,8 @@ import TermineDetailPage from '@/pages/TermineDetailPage';
 import AnmeldungenPage from '@/pages/AnmeldungenPage';
 import AnmeldungenDetailPage from '@/pages/AnmeldungenDetailPage';
 // <custom:imports>
+const TerminAnlegenPage = lazy(() => import('@/pages/intents/TerminAnlegenPage'));
+const TerminAbwickelnPage = lazy(() => import('@/pages/intents/TerminAbwickelnPage'));
 // </custom:imports>
 
 // Lazy: public pages live outside <Layout> and only load on /#/public/:slug —
@@ -40,6 +42,8 @@ export default function App() {
                 <Route path="admin" element={<AdminPage />} />
                 <Route path="verwaltung/oeffentliche-seiten" element={<PublicPagesAdmin />} />
                 {/* <custom:routes> */}
+                <Route path="intents/termin-anlegen" element={<Suspense fallback={null}><TerminAnlegenPage /></Suspense>} />
+                <Route path="intents/termin-abwickeln" element={<Suspense fallback={null}><TerminAbwickelnPage /></Suspense>} />
                 {/* </custom:routes> */}
               </Route>
             </Routes>
