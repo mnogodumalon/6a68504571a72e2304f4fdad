@@ -80,19 +80,23 @@ export default function YogaAnmeldungPage() {
       const cfg = await loadPublicPagesConfig();
       if (!cfg) { setPhase('unavailable'); return; }
 
-      const terminePage = cfg.pages['yoga-termine-liste'];
-      if (!terminePage) { setPhase('unavailable'); return; }
+      const page = cfg.pages['yoga-anmeldung'];
+      if (!page) { setPhase('unavailable'); return; }
 
       setConfig(cfg);
 
       try {
         const today = startOfToday();
-        const kursePage = cfg.pages['yoga-kurse-liste'];
+        const endpoints: Array<{ op: string; entity: string; app_id: string }> = page.endpoints ?? [];
+        const termineEndpoint = endpoints.find(e => e.op === 'list' && e.entity === 'termine');
+        const kurseEndpoint = endpoints.find(e => e.op === 'list' && e.entity === 'kurse');
 
         const [termineRaw, kurseRaw] = await Promise.all([
-          listPublicRecords(cfg, terminePage, { limit: 200 }),
-          kursePage
-            ? listPublicRecords(cfg, kursePage, { limit: 200 }).catch(() => ({}))
+          termineEndpoint
+            ? listPublicRecords(cfg, page, { appId: termineEndpoint.app_id, limit: 200 })
+            : Promise.resolve({} as Record<string, { fields: Record<string, unknown> }>),
+          kurseEndpoint
+            ? listPublicRecords(cfg, page, { appId: kurseEndpoint.app_id, limit: 200 }).catch(() => ({}))
             : Promise.resolve({} as Record<string, { fields: Record<string, unknown> }>),
         ]);
 

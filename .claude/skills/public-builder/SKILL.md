@@ -118,6 +118,16 @@ One file, all your public pages. Ops: `list` (read with a filter) and
 `create` (anonymous submit). Field names must exist on the entity
 (check `app_metadata.json`).
 
+**One flow = ONE page.** Every page is a separate publish decision for the
+owner. Declare ALL data a page needs as endpoints of THAT page — one page
+may carry several list/create endpoints across different entities
+(`page.endpoints` tells the runtime which app_id serves which op).
+
+Wrong: a booking page plus two component-less "list pages" it reads from —
+the owner must publish three things before one link works.
+Right: one `buchung` page with three endpoints (list slots, list courses,
+create booking); one publish, one link.
+
 ```json
 {
   "version": 1,

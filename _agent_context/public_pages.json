@@ -50,6 +50,37 @@
         "status_anmeldung",
         "notizen_anmeldung"
       ]
+    },
+    {
+      "slug": "yoga-anmeldung",
+      "type": "custom",
+      "entity": "anmeldungen",
+      "title": "Yoga-Kurs Online-Anmeldung",
+      "published": true,
+      "fields": [
+        "termin",
+        "vorname",
+        "nachname",
+        "email",
+        "telefon",
+        "anmeldedatum"
+      ]
+    },
+    {
+      "slug": "yoga-kurse-liste",
+      "type": "custom",
+      "entity": "kurse",
+      "title": "Yoga Kurse (öffentlich)",
+      "published": true,
+      "fields": []
+    },
+    {
+      "slug": "yoga-termine-liste",
+      "type": "custom",
+      "entity": "termine",
+      "title": "Yoga Termine (öffentlich)",
+      "published": true,
+      "fields": []
     }
   ]
 }

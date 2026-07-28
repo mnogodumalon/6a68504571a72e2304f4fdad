@@ -17,15 +17,7 @@
             "anmeldequelle": "online",
             "status_anmeldung": "neu"
           }
-        }
-      ]
-    },
-    {
-      "slug": "yoga-termine-liste",
-      "title": "Yoga Termine (öffentlich)",
-      "entity": "termine",
-      "app_id": "6a68502d9f94f73b1d91afc0",
-      "endpoints": [
+        },
         {
           "op": "list",
           "entity": "termine",
@@ -33,15 +25,7 @@
           "scope": "r.v_status == 'geplant' and r.v_datum_uhrzeit >= now()",
           "scope_description": "Zeigt nur geplante, zukünftige Termine für die öffentliche Buchungsseite",
           "fields": ["datum_uhrzeit", "raum", "angemeldete_teilnehmer"]
-        }
-      ]
-    },
-    {
-      "slug": "yoga-kurse-liste",
-      "title": "Yoga Kurse (öffentlich)",
-      "entity": "kurse",
-      "app_id": "6a685028fbdec1017e116825",
-      "endpoints": [
+        },
         {
           "op": "list",
           "entity": "kurse",
