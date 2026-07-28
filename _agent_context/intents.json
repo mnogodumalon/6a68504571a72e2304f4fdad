@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "flows": [
+    {
+      "path": "/intents/termin-anlegen",
+      "label": "Termin anlegen",
+      "description": "Kurs wählen, Termin erstellen und erste Anmeldungen erfassen",
+      "file": "src/pages/intents/TerminAnlegenPage.tsx",
+      "summary": "/**\n * Termin anlegen — 4-Schritt-Wizard.\n * Steps: 1) Kurs auswählen → 2) Termin-Details erfassen → 3) Erste Anmeldungen (optional) → 4) Abschließen & anlegen.\n * Reads: kurse (gefiltert: aktiv === true). Writes: termine (createTermineEntry), anmeldungen (createAnmeldungenEntry).\n * Composes: IntentWizardShell, EntitySelectStep, BudgetTracker.\n */",
+      "components": [
+        "BudgetTracker",
+        "Button",
+        "EntitySelectStep",
+        "Input",
+        "IntentWizardShell",
+        "Select",
+        "SelectContent",
+        "SelectItem",
+        "SelectTrigger",
+        "SelectValue",
+        "Textarea"
+      ],
+      "writes": [
+        "createAnmeldungenEntry",
+        "createTermineEntry"
+      ]
+    },
+    {
+      "path": "/intents/termin-abwickeln",
+      "label": "Termin abwickeln",
+      "description": "Anmeldungen verwalten und Termin abschließen",
+      "file": "src/pages/intents/TerminAbwickelnPage.tsx",
+      "summary": "/**\n * Termin abwickeln — 3-Schritt-Wizard.\n * Steps: 1) Termin auswählen → 2) Anmeldungen verwalten & neue Teilnehmer hinzufügen → 3) Termin abschließen.\n * Reads: termine, kurse, anmeldungen. Writes: anmeldungen (createAnmeldungenEntry, updateAnmeldungenEntry), termine (updateTermineEntry).\n * Composes: IntentWizardShell, EntitySelectStep, StatusBadge.\n */",
+      "components": [
+        "Button",
+        "EntitySelectStep",
+        "Input",
+        "IntentWizardShell",
+        "Select",
+        "SelectContent",
+        "SelectItem",
+        "SelectTrigger",
+        "SelectValue",
+        "StatusBadge",
+        "Textarea"
+      ],
+      "writes": [
+        "createAnmeldungenEntry",
+        "updateAnmeldungenEntry",
+        "updateTermineEntry"
+      ]
+    }
+  ],
+  "unregistered_pages": []
+}

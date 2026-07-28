@@ -1,0 +1,49 @@
+{
+  "pages": [
+    {
+      "slug": "yoga-anmeldung",
+      "component": "YogaAnmeldungPage",
+      "title": "Yoga-Kurs Online-Anmeldung",
+      "entity": "anmeldungen",
+      "app_id": "6a68502e907aa30b71a8c551",
+      "endpoints": [
+        {
+          "op": "create",
+          "entity": "anmeldungen",
+          "app_id": "6a68502e907aa30b71a8c551",
+          "fields": ["termin", "vorname", "nachname", "email", "telefon", "anmeldedatum", "anmeldequelle", "status_anmeldung"]
+        }
+      ]
+    },
+    {
+      "slug": "yoga-termine-liste",
+      "title": "Yoga Termine (öffentlich)",
+      "entity": "termine",
+      "app_id": "6a68502d9f94f73b1d91afc0",
+      "endpoints": [
+        {
+          "op": "list",
+          "entity": "termine",
+          "app_id": "6a68502d9f94f73b1d91afc0",
+          "scope": "status == 'geplant'",
+          "scope_description": "Zeigt nur geplante Termine für die öffentliche Buchungsseite"
+        }
+      ]
+    },
+    {
+      "slug": "yoga-kurse-liste",
+      "title": "Yoga Kurse (öffentlich)",
+      "entity": "kurse",
+      "app_id": "6a685028fbdec1017e116825",
+      "endpoints": [
+        {
+          "op": "list",
+          "entity": "kurse",
+          "app_id": "6a685028fbdec1017e116825",
+          "scope": "aktiv == true",
+          "scope_description": "Zeigt nur aktive Kurse für die öffentliche Kursübersicht"
+        }
+      ]
+    }
+  ]
+}

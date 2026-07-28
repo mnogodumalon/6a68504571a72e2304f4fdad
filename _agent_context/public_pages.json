@@ -1,4 +1,55 @@
 {
   "version": 1,
-  "pages": []
+  "pages": [
+    {
+      "slug": "kurse",
+      "type": "form",
+      "entity": "kurse",
+      "title": "Kurse",
+      "published": false,
+      "fields": [
+        "kursname",
+        "kurstyp",
+        "schwierigkeitsgrad",
+        "dauer_minuten",
+        "kursleiter",
+        "max_teilnehmer",
+        "beschreibung",
+        "aktiv"
+      ]
+    },
+    {
+      "slug": "termine",
+      "type": "form",
+      "entity": "termine",
+      "title": "Termine",
+      "published": false,
+      "fields": [
+        "kurs",
+        "datum_uhrzeit",
+        "raum",
+        "status",
+        "angemeldete_teilnehmer",
+        "notizen"
+      ]
+    },
+    {
+      "slug": "anmeldungen",
+      "type": "form",
+      "entity": "anmeldungen",
+      "title": "Anmeldungen",
+      "published": false,
+      "fields": [
+        "termin",
+        "vorname",
+        "nachname",
+        "email",
+        "telefon",
+        "anmeldedatum",
+        "anmeldequelle",
+        "status_anmeldung",
+        "notizen_anmeldung"
+      ]
+    }
+  ]
 }
