@@ -31,7 +31,8 @@
           "entity": "termine",
           "app_id": "6a68502d9f94f73b1d91afc0",
           "scope": "r.v_status == 'geplant' and r.v_datum_uhrzeit >= now()",
-          "scope_description": "Zeigt nur geplante, zukünftige Termine für die öffentliche Buchungsseite"
+          "scope_description": "Zeigt nur geplante, zukünftige Termine für die öffentliche Buchungsseite",
+          "fields": ["datum_uhrzeit", "raum", "angemeldete_teilnehmer"]
         }
       ]
     },
@@ -46,7 +47,8 @@
           "entity": "kurse",
           "app_id": "6a685028fbdec1017e116825",
           "scope": "r.v_aktiv == True",
-          "scope_description": "Zeigt nur aktive Kurse für die öffentliche Kursübersicht"
+          "scope_description": "Zeigt nur aktive Kurse für die öffentliche Kursübersicht",
+          "fields": ["kursname", "kurstyp", "kursleiter", "dauer_minuten", "max_teilnehmer"]
         }
       ]
     }
