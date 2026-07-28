@@ -1,0 +1,5 @@
+- Kurse (kurse): kursname[string/text], kurstyp[lookup/select], schwierigkeitsgrad[lookup/radio], dauer_minuten[number], kursleiter[string/text], max_teilnehmer[number], beschreibung[string/textarea], aktiv[bool]
+- Termine (termine): kurs[applookup/select], datum_uhrzeit[date/datetimeminute], raum[string/text], status[lookup/select], angemeldete_teilnehmer[number], notizen[string/textarea]
+  → kurs links to app_id 6a685028fbdec1017e116825
+- Anmeldungen (anmeldungen): termin[applookup/select], vorname[string/text], nachname[string/text], email[string/email], telefon[string/tel], anmeldedatum[date/datetimeminute], anmeldequelle[lookup/radio], status_anmeldung[lookup/select], notizen_anmeldung[string/textarea]
+  → termin links to app_id 6a68502d9f94f73b1d91afc0

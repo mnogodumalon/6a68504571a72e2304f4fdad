@@ -1,0 +1,31 @@
+{
+  "KurseDialog.tsx": {
+    "kursname": "z. B. Vinyasa für Anfänger",
+    "kurstyp": "Wähle einen Kurstyp",
+    "schwierigkeitsgrad": "z. B. Anfänger, Mittelstufe",
+    "dauer_minuten": "z. B. 60",
+    "kursleiter": "Name des Kursleiters",
+    "max_teilnehmer": "z. B. 12",
+    "beschreibung": "Zielgruppe, Inhalte, Besonderheiten...",
+    "aktiv": "Kurs verfügbar machen"
+  },
+  "TermineDialog.tsx": {
+    "kurs": "Welcher Kurs?",
+    "datum_uhrzeit": "Wann beginnt der Kurs?",
+    "raum": "z. B. Hauptsaal, Studio West",
+    "status": "Wähle einen Status",
+    "angemeldete_teilnehmer": "z. B. 8",
+    "notizen": "Besonderheiten, Anmerkungen..."
+  },
+  "AnmeldungenDialog.tsx": {
+    "termin": "Zu welchem Termin?",
+    "vorname": "z. B. Max",
+    "nachname": "z. B. Müller",
+    "email": "z. B. max@example.com",
+    "telefon": "z. B. 030 12345678",
+    "anmeldedatum": "Wann angemeldet?",
+    "anmeldequelle": "Wie angemeldet?",
+    "status_anmeldung": "Wähle einen Status",
+    "notizen_anmeldung": "Besonderheiten, Allergien, Wünsche..."
+  }
+}

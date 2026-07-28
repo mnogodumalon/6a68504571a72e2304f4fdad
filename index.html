@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>claude-react-base</title>
+    <!-- LivingApps Web Components (Chrome: la-header-bar-widget, la-drawer,
+         la-nav). Same-Origin unter dem LA-Host; im Vite-Dev läuft der Pfad
+         über den /react-webcomponents-Proxy (sandbox.py patcht vite.config.ts).
+
+         Die drei Placeholder-Assets sind der OFFIZIELLE CLS-Schutz der
+         Library (Reihenfolge laut Doku: Drawer-Script VOR Drawer-CSS — es
+         spiegelt den persistierten Collapse-Zustand aus localStorage auf
+         <html data-la-drawer-collapsed>, bevor das CSS die Breite
+         reserviert). Links/Classic-Scripts lässt vite build unangetastet.
+
+         Nur der Loader (type="module") wird dynamisch eingehängt: vite build
+         versucht absolute Modul-Pfade aufzulösen und bricht ab ("Failed to
+         resolve … from index.html"). -->
+    <link rel="stylesheet" href="/react-webcomponents/current/header-bar-widget.placeholder.css">
+    <script src="/react-webcomponents/current/drawer.placeholder.js"></script>
+    <link rel="stylesheet" href="/react-webcomponents/current/drawer.placeholder.css">
+    <script>
+      var laLoader = document.createElement('script');
+      laLoader.type = 'module';
+      laLoader.src = '/react-webcomponents/current/loader.js';
+      document.head.appendChild(laLoader);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

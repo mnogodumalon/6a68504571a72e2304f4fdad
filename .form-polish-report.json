@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "Kurse": {
+      "placeholders_set": 8,
+      "defaults_keys": ["aktiv"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Kursbeschreibung, Dauer, Kapazität). Keine Datenpaare, keine Preisfelder, nichts berechenbar. numberFields für Dauer (15–180min) und Teilnehmerzahl (1–50) als Validierungsgrenzen."
+    },
+    "Termine": {
+      "placeholders_set": 6,
+      "defaults_keys": ["datum_uhrzeit", "status"],
+      "computed_keys": ["_verfuegbare_plaetze"],
+      "reason": "Ein Datumfeld (datum_uhrzeit) wird auf heute mit Zeit vorbelegt. Status startet mit 'geplant'. Verfügbare Plätze = max_teilnehmer (aus Kurs-Lookup) minus angemeldete_teilnehmer (Zähler)."
+    },
+    "Anmeldungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["anmeldedatum", "status_anmeldung"],
+      "computed_keys": [],
+      "reason": "Erfassungs-Datum (anmeldedatum) wird auf heute mit Zeit vorbelegt. Status-Feld startet mit 'neu' (ausstehend). Kein Preis, keine berechenbaren Beziehungen zwischen Feldern."
+    }
+  }
+}
